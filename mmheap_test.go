@@ -172,7 +172,7 @@ func TestRemove0(t *testing.T) {
 	h.verify(t, 0)
 
 	for h.Len() > 0 {
-		i := Max(h)
+		i := MaxIndex(h)
 		exp := h.Len() - 1
 		x := Remove(h, i).(int)
 		if x != exp {

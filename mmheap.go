@@ -15,8 +15,10 @@
 // a different data structure may be better.
 //
 // This package exists for anybody looking, but I recommend benchmarking this
-// against github.com/google/btree. Generally, a btree is a good and fast
-// data structure.
+// against github.com/google/btree. Generally, a btree is a good and fast data
+// structure for quickly accessing min and max elements. However, a key benefit
+// of heap or mmheap is the ability to change or modify elements and fix their
+// position in the tree.
 //
 // For more information about a min-max heap, read the following paper:
 //
@@ -71,11 +73,11 @@ func Fix(h Interface, i int) {
 	}
 }
 
-// Max returns the index of the maximum element of the heap.
+// MaxIndex returns the index of the maximum element of the heap.
 //
 // This is a convenience function that always returns either 0, 1, or 2.
 // This will panic if the heap has no elements.
-func Max(h Interface) int {
+func MaxIndex(h Interface) int {
 	switch h.Len() {
 	case 1:
 		return 0
